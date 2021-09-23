@@ -55,3 +55,55 @@ unknown1 = 1
 unknown1 = 'fasdfa'
 
 
+//字符串字面量类型
+
+interface Kdd {
+    // xixri: number,
+    [key: string]: string,
+}
+interface SquareConfig {
+    color?: string;
+    width?: number;
+    [propName: string]: any;
+  }
+type xixi = number
+let ads: string = 'fas'
+type nanxi = `hello ${xixi}`
+let nanxiq: nanxi = 'hello 12131233123'
+
+let val1: any = '1213'
+let num1: number = val1.length
+
+type left = 'left'
+let leftVal: left
+leftVal = 'left'
+
+
+// 非空断言
+function fn1(val: string | undefined | null) {
+    // const tmepVal:string = val;
+    const tempVal1: string = val!;
+}
+// 函数调用忽略
+type fn3 = () => number
+function fn2(fn: fn3 | undefined) {
+    // let num1 = fn() 
+    let num2 = fn!()
+}
+
+
+// 确定赋值断言
+// let x: number;
+// init();
+// console.log(2 * x); // Error
+
+// function init() {
+//   x = 10;
+// }
+let x!: number;
+init();
+console.log(2 * x);
+
+function init() {
+  x = 10;
+}
