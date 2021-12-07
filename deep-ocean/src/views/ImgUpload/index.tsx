@@ -35,9 +35,11 @@ function ImgUpload() {
           style={{ display: 'none' }}
           onChange={handleSave}
         />
-        <label htmlFor="file" className="upload-icon">
-          <img src="https://p5.ssl.qhimg.com/t0132cd8e51c1ff5f4a.png" alt="" />
-          <span>选择文件</span>
+        <label htmlFor="file" className="upload-label">
+          <div className="upload-label-content">
+            <img src="https://p5.ssl.qhimg.com/t0132cd8e51c1ff5f4a.png" alt="" />
+            <div>点击选择文件或拖拽文件至此</div>
+          </div>
         </label>
       </div>
     </div>
