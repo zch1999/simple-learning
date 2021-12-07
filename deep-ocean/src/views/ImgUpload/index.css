@@ -1,0 +1,22 @@
+.img-box {
+  height: 500px;
+  margin: 20px 20px;
+  border-radius: 4px;
+  border: 1px solid #333333;
+}
+
+.upload-icon {
+  display: inline-block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: pointer;
+}
+.upload-icon img {
+  width: 50px;
+  height: 50px;
+}
