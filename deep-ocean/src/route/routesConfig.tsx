@@ -4,7 +4,7 @@ import { Hello } from '../views/Hello'
 export interface routeType {
   path: string
   name?: string
-  routes?: routeType[]
+  clildren?: routeType[]
   component?: any
 }
 
@@ -13,9 +13,9 @@ export const routesConfig: routeType[] = [
     path: '/hello',
     name: 'hello',
     component: Hello,
-    routes: [
+    clildren: [
       {
-        path: '/img',
+        path: '/hello/img',
         name: 'img-load',
         component: ImgUpload
       }
