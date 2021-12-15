@@ -1,7 +1,10 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import './index.css'
 
 function ImgUpload() {
+  const showBox = React.useRef(null)
+  const [imgList, setImgList] = useState<string[]>([])
+
   useEffect(() => {
     document.addEventListener('drop', cancelEvent, true)
     document.addEventListener('dragover', cancelEvent, true)
@@ -16,8 +19,16 @@ function ImgUpload() {
     // e.preventDefault()
   }, [])
 
-  const handleSave = useCallback(e => {
+  const handleInputSave = useCallback(e => {
     console.log(e, e.target.files)
+    let reader = new FileReader()
+
+    reader.onload = function (event) {
+      if (event.target!.result && typeof event.target?.result == 'string') {
+        setImgList([...imgList, event.target.result])
+      }
+    }
+    reader.readAsDataURL(e.target.files[0])
   }, [])
 
   const cancelEvent = useCallback(e => {
@@ -33,7 +44,7 @@ function ImgUpload() {
           id="file"
           accept="image/gif,image/jpeg,image/jpg,image/png"
           style={{ display: 'none' }}
-          onChange={handleSave}
+          onChange={handleInputSave}
         />
         <label htmlFor="file" className="upload-label">
           <div className="upload-label-content">
@@ -41,6 +52,11 @@ function ImgUpload() {
             <div>点击选择文件或拖拽文件至此</div>
           </div>
         </label>
+      </div>
+      <div className="showBox" ref={showBox}>
+        {imgList.map((item, index) => (
+          <img src={item} key={index} alt="" />
+        ))}
       </div>
     </div>
   )
