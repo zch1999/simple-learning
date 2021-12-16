@@ -1,0 +1,23 @@
+{
+    "Cube Request": {
+        "prefix": ["request", "rq"],
+        "body": ["request({", "\t$LINE_COMMENT $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE", "\tapi: '$0',", "\tdata: {},", "\tsuccess: res => {},", "\t//请求失败时调用，offline为配置的兜底数据","\tfail: offline => {},", "\tcomplete: (offline, res) => {}","});"],
+        "description": "quick request code"
+    },
+    "Cube getStorage": {
+        "prefix": ["getStorage", "gst"],
+        "body": ["getStorage({", "\tkey: '$1',", "\tsuccess: res => {", "\t$0", "\t},", "\tfail: offline => {},", "\tcomplete: (offline, res) => {}","});"],
+        "description": "quick getStorage code"
+    },
+    "Cube removeStorage": {
+        "prefix": ["removeStorage",  "rst"],
+        "body": ["removeStorage({", "\tkey: '$0',", "\tsuccess: res => {},","\tfail: offline => {},", "\tcomplete: (offline, res) => {}","});"],
+        "description": "quick getStorage code"
+    },
+    "Cube getStorageInfo": {
+        "prefix": ["getStorageInfo",  "rst"],
+        "body": ["removeStorage({", "\tsuccess: res => {},","\tfail: offline => {},", "\tcomplete: (offline, res) => {}","});"],
+        "description": "quick getStorage code"
+    }
+}
+  
