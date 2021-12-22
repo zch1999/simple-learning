@@ -13,6 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	vscode.languages.registerCompletionItemProvider('javascript', {
 		provideCompletionItems: (document, position) => {
+			console.log('完成');
 			return completion;
 	}}, '.');
 	
