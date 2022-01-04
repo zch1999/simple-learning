@@ -1,0 +1,27 @@
+{
+    "name": "changeLink",
+    "description": "Build an Extension!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": { 
+        "16": "jiance.png",
+        "48": "jiance48.png",
+        "128": "jiance.png" 
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "https://cube.360.com/"
+    ],
+    "content_scripts": [
+        {
+          "matches": ["https://cube.360.com/*"],
+          "js": ["content.js"]
+        }
+    ]
+}
+  
