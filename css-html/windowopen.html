@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/Users/qihoo/project/sample_learning/simple-learning/css-html/target.html" target="_blank">test</a>
+    <script>
+      setTimeout(() => {
+        // const newWindow = window.open('/Users/qihoo/project/sample_learning/simple-learning/css-html/target.html', '_blank', 'noopener')
+        // newWindow.opener = null
+        var newTab = window.open()
+        newTab.opener = null
+        newTab.location = '/Users/qihoo/project/sample_learning/simple-learning/css-html/target.html'
+      }, 3000)
+    </script>
+  </body>
+</html>
